@@ -1,0 +1,59 @@
+// DAX measures for the depreciation star schema (powerbi/data/*.csv).
+// Paste each measure via Modeling > New measure (see powerbi/README.md).
+// Suggested home table: fact_depreciation, display folder "Depreciation".
+//
+// Cost, accumulated depreciation and NBV are BALANCES: they are semi-additive
+// and must be taken at the last month in the filter context, never summed
+// over months. Depreciation is a FLOW and is summed.
+//
+// The YoY measures shift by month_index (year * 12 + month - 1) instead of
+// using SAMEPERIODLASTYEAR, because dim_date is at month grain (one row per
+// month) and does not need to be marked as a date table for this to work.
+
+Depreciation =
+SUM ( fact_depreciation[depreciation] )
+
+Gross Cost =
+VAR LastMonth = MAX ( dim_date[month_index] )
+RETURN
+    CALCULATE ( SUM ( fact_depreciation[closing_cost] ), dim_date[month_index] = LastMonth )
+
+Accumulated Depreciation =
+VAR LastMonth = MAX ( dim_date[month_index] )
+RETURN
+    CALCULATE ( SUM ( fact_depreciation[closing_acc_dep] ), dim_date[month_index] = LastMonth )
+
+NBV =
+VAR LastMonth = MAX ( dim_date[month_index] )
+RETURN
+    CALCULATE ( SUM ( fact_depreciation[closing_nbv] ), dim_date[month_index] = LastMonth )
+
+Depreciation PY =
+VAR ShiftedMonths =
+    SELECTCOLUMNS ( VALUES ( dim_date[month_index] ), "month_index", dim_date[month_index] - 12 )
+RETURN
+    CALCULATE ( [Depreciation], REMOVEFILTERS ( dim_date ), TREATAS ( ShiftedMonths, dim_date[month_index] ) )
+
+Depreciation YoY Change =
+VAR PriorYear = [Depreciation PY]
+RETURN
+    IF ( NOT ISBLANK ( PriorYear ), [Depreciation] - PriorYear )
+
+Depreciation YoY % =
+DIVIDE ( [Depreciation YoY Change], [Depreciation PY] )
+
+// Depreciation of the selected period divided by gross cost at the end of the
+// period. Not annualised: for a single month expect roughly 1/12 of the yearly value.
+Depreciation % of Cost =
+DIVIDE ( [Depreciation], [Gross Cost] )
+
+Depreciation % of Cost (annualised) =
+VAR MonthsSelected = DISTINCTCOUNT ( dim_date[month_index] )
+RETURN
+    DIVIDE ( [Depreciation] * 12 / MonthsSelected, [Gross Cost] )
+
+Disposals at Cost =
+SUM ( fact_depreciation[disposals_cost] )
+
+Additions =
+SUM ( fact_depreciation[additions] )

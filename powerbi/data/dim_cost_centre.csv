@@ -1,0 +1,7 @@
+cost_centre_key,cost_centre_code,cost_centre_name,division
+1,CC-100,IT Platforms,Technology
+2,CC-200,Network Operations,Technology
+3,CC-300,Customer Care,Commercial
+4,CC-400,Sales and Marketing,Commercial
+5,CC-500,Finance and Administration,Corporate
+6,CC-600,Product Development,Technology
