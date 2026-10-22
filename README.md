@@ -103,7 +103,7 @@ a refreshed workbook or a report screenshot:
 
 ## Production context
 
-> _Production context: TODO(Mario) — what the real version did and its outcomes, using only publicly shareable facts._
+The production version replaced a monthly multi-file manual workbook.
 
 ## Quickstart
 
