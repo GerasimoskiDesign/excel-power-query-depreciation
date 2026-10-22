@@ -1,0 +1,10 @@
+asset_id,movement_type,movement_date,amount,asset_name,category,useful_life_months,cost_centre
+ ia-00076,trf,04/07/2024,,,,,CC-100
+IA-00279  , DISP,06/07/2024,,Database licence (2016),,,
+IA-00129  ,disposal,07/07/2024,,Domain portfolio (2020),,,
+IA-00323  ,addition ,09/07/2024,91162.35,Content distribution right (2024),Usage rights,180,CC-200
+IA-00340  ,Addition,11/07/2024,54096.90,Database licence (2024),Software licences,60,CC-500
+IA-00385  ,addition ,13/07/2024,64200.83,Brand licence (2024),Trademarks and other rights,120,CC-100
+ ia-00028,disposal,16/07/2024,,Security software licence (2019),,,
+ ia-00398,Addition,19/07/2024,4632.09,ERP licence (2024),Software licences,36,CC-300
+ ia-00375,Addition,23/07/2024,22594.61,Mobile app release (2024),Capitalised development,36,CC-400

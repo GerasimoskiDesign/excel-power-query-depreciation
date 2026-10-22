@@ -1,0 +1,10 @@
+asset_id,movement_type,movement_date,amount,asset_name,category,useful_life_months,cost_centre
+IA-00117,DISPOSAL,2025-01-02,,Analytics suite licence (2020),,,
+IA-00166,DISPOSAL,2025-01-02,,Collaboration suite licence (2020),,,
+IA-00386,ADDITION,2025-01-02,359597.59,Domain portfolio (2025),Trademarks and other rights,60,CC-600
+IA-00006,TRANSFER,2025-01-09,,,,,CC-400
+IA-00318,DISPOSAL,2025-01-19,,ERP licence (2022),,,
+IA-00341,ADDITION,2025-01-20,105623.35,Patent licence (2025),Trademarks and other rights,60,CC-600
+IA-00342,ADDITION,2025-01-21,165743.41,Collaboration suite licence (2025),Software licences,36,CC-200
+IA-00388,ADDITION,2025-01-22,315125.41,Monitoring tool licence (2025),Software licences,36,CC-200
+IA-00396,ADDITION,2025-01-24,39369.25,Self-care portal release (2025),Capitalised development,48,CC-300

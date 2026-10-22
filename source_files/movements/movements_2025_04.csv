@@ -1,0 +1,5 @@
+asset_id,movement_type,movement_date,amount,asset_name,category,useful_life_months,cost_centre
+IA-00337,ADDITION,03/04/2025,"17,203.53 ",Database licence (2025),Software licences, 36,CC-400
+IA-00345,ADDITION,10/04/2025,"94,640.00 ",Mobile app release (2025),Capitalised development, 60,CC-500
+IA-00372,ADDITION,20/04/2025,"15,334.76 ",Domain portfolio (2025),Trademarks and other rights, 120,CC-300
+IA-00261,TRANSFER,24/04/2025,,,,,CC-600

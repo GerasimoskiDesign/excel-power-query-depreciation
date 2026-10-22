@@ -1,0 +1,8 @@
+asset_id,movement_type,movement_date,amount,asset_name,category,useful_life_months,cost_centre
+IA-00346  ,ADD,03/04/2024,"9,301.24 ",Database licence (2024),Software licences, 60,CC-400
+IA-00374  ,addition ,12/04/2024,"28,749.87 ",ERP licence (2024),Software licences, 48,CC-500
+IA-00303  , DISP,13/04/2024,,Monitoring tool licence (2021),,,
+IA-00373  ,addition ,13/04/2024,"35,765.08 ",Self-care portal release (2024),Capitalised development, 36,CC-500
+IA-00382  ,ADD,17/04/2024,"71,941.91 ",Order management feature (2024),Capitalised development, 60,CC-100
+ ia-00184, DISP,20/04/2024,,Site access right (2016),,,
+IA-00369  ,addition ,20/04/2024,"13,855.61 ",Patent licence (2024),Trademarks and other rights, 120,CC-500

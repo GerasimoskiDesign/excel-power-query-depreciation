@@ -1,0 +1,6 @@
+asset_id,movement_type,movement_date,amount,asset_name,category,useful_life_months,cost_centre
+IA-00399,ADDITION,2024-10-03,"22,390.24 ",Collaboration suite licence (2024),Software licences, 48,CC-300
+IA-00014,DISPOSAL,2024-10-14,,ERP licence (2021),,,
+IA-00377,ADDITION,2024-10-15,"437,151.85 ",Billing engine module (2024),Capitalised development, 60,CC-300
+IA-00199,DISPOSAL,2024-10-29,,Domain portfolio (2017),,,
+IA-00141,TRANSFER,2024-10-31,,,,,CC-600

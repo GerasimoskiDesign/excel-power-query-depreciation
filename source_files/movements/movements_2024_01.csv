@@ -1,0 +1,6 @@
+asset_id,movement_type,movement_date,amount,asset_name,category,useful_life_months,cost_centre
+IA-00335,ADDITION,2024-01-01,27599.55,Database licence (2024),Software licences,48,CC-500
+IA-00378,ADDITION,2024-01-16,142119.92,Order management feature (2024),Capitalised development,48,CC-500
+IA-00400,ADDITION,2024-01-19,9875.69,Database licence (2024),Software licences,60,CC-200
+IA-00389,ADDITION,2024-01-23,23068.11,Analytics suite licence (2024),Software licences,60,CC-200
+IA-00285,TRANSFER,2024-01-29,,,,,CC-100
