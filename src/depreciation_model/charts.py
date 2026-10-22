@@ -103,9 +103,44 @@ def balance_rollforward(schedule: pd.DataFrame, path: Path) -> Path:
     return path
 
 
+def depreciation_and_nbv(schedule: pd.DataFrame, path: Path) -> Path:
+    """Headline chart: monthly depreciation (top) and month-end NBV (bottom), shared x-axis.
+
+    Two panels instead of a dual y-axis, so neither scale can be read against the other.
+    """
+    totals = schedule.groupby("month_start")[["depreciation", "closing_nbv"]].sum()
+    labels = [m.strftime("%Y-%m") for m in totals.index]
+    x = list(range(len(labels)))
+    fig, (top, bottom) = plt.subplots(
+        2, 1, figsize=(10, 5.6), dpi=120, sharex=True, gridspec_kw={"height_ratios": [1, 1]}
+    )
+    fig.patch.set_facecolor(SURFACE)
+    top.bar(x, totals["depreciation"] / 1_000, color=SERIES[0], width=0.75)
+    _style(top, "Monthly depreciation (synthetic data)", "EUR thousand")
+    nbv = totals["closing_nbv"] / 1_000_000
+    bottom.plot(x, nbv, color=SERIES[1], linewidth=2, marker="o", markersize=3)
+    bottom.annotate(
+        f"{nbv.iloc[-1]:,.1f}",
+        (len(labels) - 1, nbv.iloc[-1]),
+        xytext=(6, 0),
+        textcoords="offset points",
+        va="center",
+        fontsize=8,
+        color=TEXT,
+    )
+    _style(bottom, "Net book value at month end (synthetic data)", "EUR million")
+    bottom.set_ylim(bottom=0)
+    bottom.set_xticks(range(0, len(labels), 3), labels[::3])
+    fig.tight_layout()
+    fig.savefig(path, facecolor=SURFACE)
+    plt.close(fig)
+    return path
+
+
 def write_charts(schedule: pd.DataFrame, img_dir: Path) -> list[Path]:
     img_dir.mkdir(parents=True, exist_ok=True)
     paths = [
+        depreciation_and_nbv(schedule, img_dir / "depreciation_and_nbv.png"),
         depreciation_by_category(schedule, img_dir / "depreciation_by_category.png"),
         balance_rollforward(schedule, img_dir / "balance_rollforward.png"),
     ]

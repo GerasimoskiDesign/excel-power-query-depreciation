@@ -21,10 +21,6 @@ erDiagram
 
 ## Build the report (Power BI Desktop)
 
-> TODO(Mario): do this once in Power BI Desktop, save the report as
-> `powerbi/depreciation.pbix` (optional, binary) and a screenshot as
-> `docs/img/powerbi_report.png` (placeholder referenced in the README).
-
 1. **Home > Get data > Text/CSV**. Load the four files in `powerbi/data/` one at a time
    (or use **Get data > Folder** and pick each file). In the preview, click **Load**.
    Check the column types in Power Query:

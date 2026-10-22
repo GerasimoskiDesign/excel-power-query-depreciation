@@ -24,4 +24,8 @@ def test_all_command_builds_every_output(tmp_path: Path) -> None:
     for name in ("dim_asset", "dim_date", "dim_cost_centre", "fact_depreciation"):
         assert (tmp_path / "powerbi" / "data" / f"{name}.csv").exists()
     assert (tmp_path / "depreciation_model.xlsx").exists()
-    assert len(list((tmp_path / "docs" / "img").glob("*.png"))) == 2
+    assert sorted(p.name for p in (tmp_path / "docs" / "img").glob("*.png")) == [
+        "balance_rollforward.png",
+        "depreciation_and_nbv.png",
+        "depreciation_by_category.png",
+    ]

@@ -69,6 +69,8 @@ UTF-8 BOMs and inconsistent casing. The Python cleaner turns every one of the 24
 
 **Output:** 8,106 asset-month rows.
 
+![Monthly depreciation and net book value](docs/img/depreciation_and_nbv.png)
+
 | Year | Depreciation | Gross cost (Dec) | Accumulated depreciation (Dec) | NBV (Dec) | Depreciation % of cost |
 |------|-------------:|-----------------:|-------------------------------:|----------:|-----------------------:|
 | 2024 | 6,594,199.75 | 59,425,915.81 | 41,124,357.84 | 18,301,557.97 | 11.10% |
@@ -94,12 +96,10 @@ Reconciliations that pass on every run (see `tests/test_reconciliation.py`):
 
 **Excel and Power BI.** The M scripts and the DAX measures have to run inside Excel and Power BI Desktop,
 and CI cannot run them. The Check sheet logic is tested: pycel evaluates the formulas
-for the "not loaded", "match" and "mismatch" cases. The repo does not yet include
-a refreshed workbook or a report screenshot:
+for the "not loaded", "match" and "mismatch" cases. Setup steps are in
+[docs/LOAD_QUERIES.md](docs/LOAD_QUERIES.md) and [powerbi/README.md](powerbi/README.md).
 
-> TODO(Mario): screenshot of the Check sheet after Refresh All (`docs/img/excel_check_sheet.png`)
-> and of the Power BI page (`docs/img/powerbi_report.png`). See [docs/LOAD_QUERIES.md](docs/LOAD_QUERIES.md)
-> and [powerbi/README.md](powerbi/README.md).
+Excel and Power BI screenshots coming soon. All numbers are reproducible with the Python reference implementation.
 
 ## Production context
 
@@ -198,7 +198,7 @@ excel-power-query-depreciation/
   month-grain date table works without being marked as a date table.
 * **Limitations.**
   * The M code has been written and reviewed but not executed in CI (that needs Excel). It
-    is verified only when someone refreshes it in Excel (TODO above).
+    is verified only when someone refreshes it in Excel.
   * The data covers one currency, no impairments, no revaluations, no changes to useful life,
     and no partial disposals.
   * Transfers move only the cost centre, never amounts between assets.

@@ -7,10 +7,6 @@ are pasted in once by hand. After that, the workbook refreshes with
 Written for Excel for Microsoft 365 on Windows (English UI). Excel 2019/2021 work the
 same way; some menu names differ slightly.
 
-> TODO(Mario): run through these steps once in Excel, fix any wording that differs
-> from the real UI, and save a screenshot of the passing Check sheet as
-> `docs/img/excel_check_sheet.png` (placeholder referenced in the README).
-
 ## 0. Prepare the files
 
 From the repository root (PowerShell):
